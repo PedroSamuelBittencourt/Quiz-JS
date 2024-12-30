@@ -1,0 +1,237 @@
+html {
+    font-size: 15px; /* 1rem será igual a 16px */ 
+}
+/* *{
+    border: 1px solid red;
+} */
+body {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #595645;
+    font-family: "Poppins", serif;
+    font-weight: 500;
+    font-style: normal; 
+    max-width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.pergunta {
+    font-family: "Poppins", sans-serif;
+    width: 90%;
+    max-width: 800px; 
+    height: 50%; 
+    padding: 2%;
+    background-color: #BFAC95;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.227);
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+    margin-bottom: 20px;
+    opacity: 0; 
+    transform: translateX(100%); 
+    animation: slideIn 1s forwards; /* Aplica a animação */
+    & h2{
+        
+        color: #470F02;
+    }
+    & p{
+        color: #f9f9f9;
+    }
+}
+
+#revelar_resposta {
+    display: none;
+    background-color: #D0C9A4; 
+    border: 1px solid #302B26 ; 
+    border-radius: 10px; 
+    padding: 20px; 
+    text-align: center; 
+    box-shadow: 0 4px 8px #302B26;
+    margin: 20px; 
+    flex-direction: column;
+    margin-top: 5%;
+        & h1{
+            color: #486C32; 
+            font-size: 2em; 
+            margin-bottom: 10px; 
+        }
+        & h2 {
+            color: #466A31; 
+            font-size: 1.5em; 
+            margin: 5px 0; 
+        }
+}
+button {
+    padding: 10px 15px;
+    background-color: #621605;
+    color: #DCC7AC;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    margin-top: 3px;
+    font-family: "Poppins", serif;
+    font-weight: 500;
+    font-style: normal; 
+}
+
+button:hover {
+    background-color: #9E2105;
+}
+#botao_revelar {
+    background: linear-gradient(to right, #486C32, #6EA24B);
+    color: #f2f2f2; 
+    border: none; 
+    border-radius: 5px; 
+    padding: 10px 20px; 
+    font-size: 1em; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+}
+
+#botao_revelar:hover {
+    background: linear-gradient(to left, #486C32, #6EA24B);
+}
+#fim {
+    display: none;
+    margin: 8% auto;
+    width: 100%;
+    max-width: 400px;
+    height: 40%;
+    background-color: #f9f9f9;
+    border: 1.5px solid #621605;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.592);
+    flex-direction: column;
+    & h1 {
+        color: #621605;
+        font-size: 2.5em;
+        margin-bottom: 10px;
+        font-family: "Poppins", serif;
+        font-weight: 700;
+        font-style: normal;
+        margin: 3px 0px 0px 0px;
+    }
+    & h2 {
+        color: #333;
+        font-size: 1.5em;
+        margin: 5px 0;
+        font-family: "Poppins", serif;
+        font-weight: 500;
+        font-style: normal;
+    }
+    & button{
+        background-color: #333;
+        color: #BFAC95;
+        border: 2px solid #333;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    & button:hover{
+        background-color: #7796A9;
+        color: #333;
+        font-weight: bolder;
+    }
+}
+.opcao {
+    width: 96%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1% 1.6%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 5px 0;
+    transition: background-color 0.3s;
+}
+
+.opcao:hover {
+    background-color: #DCC7AC;
+}
+
+input[type="checkbox"]{
+    display: none;
+    margin-right: 10px;
+}
+
+input[type="checkbox"]+label::before{
+    content: "";
+    width: 13px;
+    height: 15px;
+    border-radius: 55px;
+    background-color: #BFAC95;
+    border: 1px solid rgba(0, 17, 0, 0.681);
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 4px;
+    margin-right: 5px;
+    padding: 0px 0px 1px 3px;
+}
+input[type="checkbox"]:checked+label::before{
+    content: "X";
+    font-size: 1em;
+    font-family: Arial,sans-serif;
+    font-weight: bolder;
+    color: #BFAC95;
+    background-color: #621605;
+}
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%); 
+    }
+    to {
+        opacity: 1; 
+        transform: translateX(0); 
+    }
+}
+@media (max-width: 768px) {
+    body{
+        padding: 5px;
+    }
+    .pergunta {
+        width: 95%; 
+    }
+    button {
+        padding: 8px 12px; /* Ajusta o padding dos botões */
+    }
+}
+
+@media (max-width: 480px) {
+    body{
+        height: 100%;
+        background-color: #BFAC95;
+        padding: 8%;
+    }
+    .pergunta {
+        margin: 0px;
+        width: 100%;
+        height: 100%;
+        box-shadow: none;
+        border: 1px solid #f2f2f2;
+        padding: 15px;
+    }
+    .opcao{
+        padding: 6px;
+    }
+    h2 {
+        font-size: 1.5em; 
+    }
+    #fim {
+        margin: 0px;
+        width: 100%;
+        height: 100%;
+    }
+    #revelar_resposta {
+        margin: 0px;
+    }
+}

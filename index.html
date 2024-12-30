@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz com Animação</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link para o arquivo CSS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body>   
+<!-- pergunta 1 -->
+<div class="pergunta" id="pergunta1">
+    <h2>1- O que é JavaScript?</h2>
+    <div class="opcao">
+        <input type="checkbox" id="option1" name="question1"  onchange="selectOnlyOne('question1', this)">
+        <label for="option1">Uma linguagem de marcação usada para estruturar páginas web.</label>
+    </div>
+    <div class="opcao">
+        <input type="checkbox" id="option2" name="question1" class="correta" onchange="selectOnlyOne('question1', this)">
+        <label for="option2">Uma linguagem de programação usada para criar conteúdo dinâmico na web.</label>
+    </div>
+    <div class="opcao">
+        <input type="checkbox" id="option3" name="question1" onchange="selectOnlyOne('question1', this)">
+        <label for="option3">Uma biblioteca usada para estilizar elementos HTML.</label>
+    </div>
+    <div class="opcao">
+        <input type="checkbox" id="option4" name="question1" onchange="selectOnlyOne('question1', this)">
+        <label for="option4">Uma ferramenta para compilar código C++.</label>
+    </div>
+    <button class="next-button" onclick="nextQuestion(1)">Próxima Questão</button>
+</div>
+
+<!-- pergunta 2 -->
+<div class="pergunta" id="pergunta2" style="display: none;">
+    <h2>2- Qual é a finalidade do comando console.log() em JavaScript?</h2>
+    <div class="opcao">
+        <input type="checkbox" id="option5" name="question2" onchange="selectOnlyOne('question2', this)">
+        <label for="option5">Adicionar um evento a um elemento HTML.</label>
+    </div>
+    <div class="opcao">
+        <input type="checkbox" id="option6" name="question2" onchange="selectOnlyOne('question2', this)">
+        <label for="option6">Declarar uma variável no código.</label>
+    </div>
+    <div class="opcao">
+        <input type="checkbox" class="correta" id="option7" name="question2" onchange="selectOnlyOne('question2', this)">
+        <label for="option7">Exibir mensagens ou valores no console do navegador.</label>
+    </div>
+    <div class="opcao">
+        <input type="checkbox" id="option8" name="question2" onchange="selectOnlyOne('question2', this)">
+        <label for="option8">Criar loops no programa.</label>
+    </div>
+    <button class="next-button" onclick="nextQuestion(2)">Próxima Questão</button>
+    <button class="next-button" onclick="lastQuestion(2)">Questão Anterior</button>
+</div>
+
+<!-- pergunta 3 -->
+<div class="pergunta" id="pergunta3" style="display: none;">
+    <h2>3- Qual dos seguintes tipos de dados NÃO é usado em JavaScript?</h2>
+    <div class="opcao">
+        <input type="checkbox" id="option9" name="question3" onchange="selectOnlyOne('question3', this)">
+        <label for="option9">String</label>
+    </div>
+    <div class="opcao">
+        <input type="checkbox" id="option10" name="question3" onchange="selectOnlyOne('question3', this)">
+        <label for="option10">Boolean</label>
+    </div>
+    <div class="opcao">
+        <input type="checkbox" id="option11" class="correta" name="question3" onchange="selectOnlyOne('question3', this)">
+        <label for="option11">Integer</label>
+    </div>
+    <div class="opcao">
+        <input type="checkbox" id="option12" name="question3" onchange="selectOnlyOne('question3', this)">
+        <label for="option12">Undefined</label>
+    </div>
+    <button class="next-button" onclick="nextQuestion(3)">Próxima Questão</button>
+    <button class="next-button" onclick="lastQuestion(3)">Questão Anterior</button>
+</div>
+
+<!-- pergunta 4 -->
+<div class="pergunta" id="pergunta4" style="display: none;">
+    
+        <h2>4- O que acontece se você tentar acessar uma variável declarada com let antes de sua inicialização?</h2>
+        <div class="opcao">
+            <input type="checkbox" id="option13" name="question4" onchange="selectOnlyOne('question4', this)">
+            <label for="option13">Retorna undefined.</label>
+        </div>
+        <div class="opcao">
+            <input type="checkbox" id="option14" class="correta"  name="question4" onchange="selectOnlyOne('question4', this)">
+            <label for="option14">Lança um erro de referência.</label>
+        </div>
+        <div class="opcao">
+            <input type="checkbox" id="option15" name="question4" onchange="selectOnlyOne('question4', this)">
+            <label for="option15">Atribui automaticamente um valor vazio.</label>
+        </div>
+        <div class="opcao">
+            <input type="checkbox" id="option16" name="question4" onchange="selectOnlyOne('question4', this)">
+            <label for="option16">Retorna null.</label>
+        </div>
+        <button class="next-button" onclick="nextQuestion(4)">Próxima Questão</button>
+        <button class="next-button" onclick="lastQuestion(4)">Questão Anterior</button>
+    
+</div>
+
+<!-- pergunta 5 -->
+<div class="pergunta" id="pergunta5" style="display: none;">
+    <h2>5- Qual método pode ser usado para converter uma string em um número em JavaScript?</h2>
+    <div class="opcao">
+        <input type="checkbox" id="option17" name="question5" onchange="selectOnlyOne('question5', this)">
+        <label for="option17">parseString()</label>
+    </div>
+    <div class="opcao">
+        <input type="checkbox" id="option18" name="question5" onchange="selectOnlyOne('question5', this)">
+        <label for="option18">toNumber()</label>
+    </div>
+    <div class="opcao">
+        <input type="checkbox" id="option19" class="correta"  name="question5" onchange="selectOnlyOne('question5', this)">
+        <label for="option19">parseInt()</label>
+    </div>
+    <div class="opcao">
+        <input type="checkbox" id="option20" name="question5" onchange="selectOnlyOne('question5', this)">
+        <label for="option20">stringToNum()</label>
+    </div>
+    <button class="next-button" onclick="nextQuestion(5)">Próxima Questão</button>
+    <button class="next-button" onclick="lastQuestion(5)">Questão Anterior</button>
+</div>
+
+<!-- pergunta 6 -->
+<div class="pergunta" id="pergunta6" style="display: none;">
+    <h2>6- Qual é o propósito da palavra-chave 'this' em JavaScript?</h2>
+    <div class="opcao">
+        <input type="checkbox" id="option21" name="question6" onchange="selectOnlyOne('question6', this)">
+        <label for="option21">Fazer referência ao objeto global do navegador.</label>
+    </div>
+    <div class="opcao">
+        <input type="checkbox" id="option22" class="correta"  name="question6" onchange="selectOnlyOne('question6', this)">
+        <label for="option22">Fazer referência ao objeto atual no contexto em que está sendo usado.</label>
+    </div>
+    <div class="opcao">
+        <input type="checkbox" id="option23" name="question6" onchange="selectOnlyOne('question6', this)">
+        <label for="option23">Declarar uma nova variável no escopo global.</label>
+    </div>
+    <div class="opcao">
+        <input type="checkbox" id="option24" name="question6" onchange="selectOnlyOne('question6', this)">
+        <label for="option24">Invocar uma função anonimamente.</label>
+    </div>
+    <button class="next-button" onclick="nextQuestion(6)">Próxima Questão</button>
+    <button class="next-button" onclick="lastQuestion(6)">Questão Anterior</button>
+</div>
+
+<!-- pergunta 7 -->
+<div class="pergunta" id="pergunta7" style="display: none;">
+    <h2>7- Qual das opções abaixo NÃO é uma estrutura de controle em JavaScript?</h2>
+    <div class="opcao">
+        <input type="checkbox" id="option25" name="question7" onchange="selectOnlyOne('question7', this)">
+        <label for="option25">if...else</label>
+    </div>
+    <div class="opcao">
+        <input type="checkbox" id="option26" name="question7" onchange="selectOnlyOne('question7', this)">
+        <label for="option26">for</label>
+    </div>
+    <div class="opcao">
+        <input type="checkbox" id="option27" name="question7" onchange="selectOnlyOne('question7', this)">
+        <label for="option27">while</label>
+    </div>
+    <div class="opcao">
+        <input type="checkbox" id="option28" class="correta"  name="question7" onchange="selectOnlyOne('question7', this)">
+        <label for="option28">do...then</label>
+    </div>
+    <button class="next-button" onclick="nextQuestion(7)">Próxima Questão</button>
+    <button class="next-button" onclick="lastQuestion(7)">Questão Anterior</button>
+</div>
+
+<!-- pergunta 8 -->
+<div class="pergunta" id="pergunta8" style="display: none;">
+    <h2>8- O que o método Array.prototype.map() faz?</h2>
+    <div class="opcao">
+        <input type="checkbox" id="option29" name="question8" onchange="selectOnlyOne('question8', this)">
+        <label for="option29">Filtra elementos de um array com base em uma condição.</label>
+    </div>
+    <div class="opcao">
+        <input type="checkbox" id="option30" class="correta"  name="question8" onchange="selectOnlyOne('question8', this)">
+        <label for="option30">Executa uma função em cada elemento e cria um novo array com os resultados.</label>
+    </div>
+    <div class="opcao">
+        <input type="checkbox" id="option31" name="question8" onchange="selectOnlyOne('question8', this)">
+        <label for="option31">Adiciona um novo elemento no início do array.</label>
+    </div>
+    <div class="opcao">
+        <input type="checkbox" id="option32" name="question8" onchange="selectOnlyOne('question8', this)">
+        <label for="option32">Encontra o índice de um elemento específico no array.</label>
+    </div>
+    <button class="next-button" onclick="nextQuestion(8)">Próxima Questão</button>
+    <button class="next-button" onclick="lastQuestion(8)">Questão Anterior</button>
+</div>
+
+<!-- pergunta 9 -->
+<div class="pergunta" id="pergunta9" style="display: none;">
+    <h2>9- Qual das opções abaixo é usada para criar um objeto em JavaScript?</h2>
+    <div class="opcao">
+        <input type="checkbox" id="option33" name="question9" onchange="selectOnlyOne('question9', this)">
+        <label for="option33">let obj = new Object();</label>
+    </div>
+    <div class="opcao">
+        <input type="checkbox" id="option34" name="question9" onchange="selectOnlyOne('question9', this)">
+        <label for="option34">let obj = {};</label>
+    </div>
+    <div class="opcao">
+        <input type="checkbox" id="option35" name="question9" onchange="selectOnlyOne('question9', this)">
+        <label for="option35">let obj = Object.create(null);</label>
+    </div>
+    <div class="opcao">
+        <input type="checkbox" id="option36" class="correta"  name="question9" onchange="selectOnlyOne('question9', this)">
+        <label for="option36">Todas as anteriores.</label>
+    </div>
+    <button class="next-button" onclick="nextQuestion(9)">Próxima Questão</button>
+    <button class="next-button" onclick="lastQuestion(9)">Questão Anterior</button>
+</div>
+
+<!-- pergunta 10 -->
+<div class="pergunta" id="pergunta10" style="display: none;">
+    <h2>10- Qual é o comportamento do operador === em JavaScript?</h2>
+    <div class="opcao">
+        <input type="checkbox" id="option37" name="question10" onchange="selectOnlyOne('question10', this)">
+        <label for="option37">Compara valores, ignorando tipos de dados.</label>
+    </div>
+    <div class="opcao">
+        <input type="checkbox" class="correta"  id="option38" name="question10" onchange="selectOnlyOne('question10', this)">
+        <label for="option38">Compara valores e tipos de dados.</label>
+    </div>
+    <div class="opcao">
+        <input type="checkbox" id="option39" name="question10" onchange="selectOnlyOne('question10', this)">
+        <label for="option39">Atribui um valor a uma variável.</label>
+    </div>
+    <div class="opcao">
+        <input type="checkbox" id="option40" name="question10" onchange="selectOnlyOne('question10', this)">
+        <label for="option40">Converte tipos de dados antes de comparar.</label>
+    </div>
+    <button class="next-button" onclick="resultado()" >Finalizar o Quiz</button>
+    <button class="next-button" onclick="lastQuestion(10)">Questão Anterior</button>
+</div>
+
+        <div id="revelar_resposta" style="display: none;">
+            <h1>Obrigado por ter participado!</h1>
+            <h2>Basta clicar no botão abaixo</h2>
+            <h2>para ver quantas você acertou!</h2>
+            <button id="botao_revelar" class="revelar">Revelar Respostas</button>
+        </div>
+        <div id="fim">
+            <h1 id="istatus"></h1>
+            <h2>Você Acertou:</h2>
+            <h2 id="pts"></h2>
+            <h2 id="frase_final"></h2>
+            <button onclick="recomeçarQuiz()">Recomeçar!</button>
+            
+        </div> 
+        
+
+    
+    
+    <script src="script.js"></script> 
+</body>
+</html>
